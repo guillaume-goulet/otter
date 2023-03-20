@@ -6,6 +6,10 @@ inputs:
     description: 'Enable Cache'
     required: false
     default: 'false'
+  enable-test-app-cache:
+    description: 'Enable Cache for test-app'
+    required: false
+    default: 'false'
   cache-build-identifier:
     description: 'Custom identifier to build cache key'
     required: false
@@ -48,6 +52,18 @@ runs:
           ${{ runner.os }}-build-${{ env.hash }}
           ${{ runner.os }}-build
           ${{ runner.os }}
+    - run: echo "date=$(date +'%Y-%m')" >> $GITHUB_ENV
+      shell: bash
+    - name: Cache test-app yarn
+      if: inputs.enable-test-app-cache == 'true'
+      uses: actions/cache@v3
+      with:
+        path: |
+          .cache/test-app
+          !.cache/test-app/v6/npm-@ama-sdk*
+          !.cache/test-app/v6/npm-@ama-terasu*
+          !.cache/test-app/v6/npm-@o3r*
+        key: ${{ runner.os }}-test-app-${{ env.date }}
     - name: Install
       shell: bash
       run: yarn install
