@@ -23,16 +23,16 @@ export interface PlaceholderRequestReply {
  * PlaceholderRequest model
  */
 export interface PlaceholderRequestModel extends AsyncStoreItem, PlaceholderRequestReply {
-  /** Raw URL that is not localized, ex: my_url/[LANG]/my_placeholder.json */
+  /** Raw URL that is not localized, ex: my_url/[LANGUAGE]/my_placeholder.json */
   id: string;
-  /** Resolved URL that is localized, ex: [LANG] my_url/en-GB/my_placeholder.json  */
+  /** Resolved URL that is localized, ex: my_url/en-GB/my_placeholder.json  */
   resolvedUrl: string;
   /** Rendered template associated to the resolved URL, can be dynamic */
   renderedTemplate?: string;
   /** Unknown type found in the reply */
   unknownTypeFound?: boolean;
 
-  /** Caching mechanism will keep previous requests result for a given language, this boolean disables the dynamic rendering is turned to false */
+  /** A mechanism to cache previous request results for a given language. This boolean disables the dynamic rendering when it is set to false */
   used?: boolean;
 }
 

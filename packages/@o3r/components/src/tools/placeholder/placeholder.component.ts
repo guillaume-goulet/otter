@@ -59,12 +59,9 @@ export class PlaceholderComponent implements OnInit, OnDestroy {
           const orderedRenderedTemplates = templates.orderedRenderedTemplates;
           if (!orderedRenderedTemplates || !orderedRenderedTemplates.length) {
             this.template = undefined;
-          } else if (orderedRenderedTemplates.length === 1) {
-            // Behavior before the multi url in placeholder support
-            this.template = orderedRenderedTemplates[0];
           } else {
             // Concatenates the list of templates
-            this.template = `${orderedRenderedTemplates.join('')}`;
+            this.template = orderedRenderedTemplates.join('');
           }
         } else {
           this.isPending = false;
