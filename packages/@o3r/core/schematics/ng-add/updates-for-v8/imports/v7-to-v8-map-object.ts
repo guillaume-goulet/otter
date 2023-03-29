@@ -1,8 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-/** Map containing all import changes in otter packages from v7 to v8 */
-export interface ImportsMapping {
-  [packageName: string]: { [importName: string]: { newPackage: string; newValue?: string } };
-}
+import type { ImportsMapping } from '@o3r/schematics';
 
 /** Packages that were renamed */
 export const renamedPackages: { [key: string]: string } = {
