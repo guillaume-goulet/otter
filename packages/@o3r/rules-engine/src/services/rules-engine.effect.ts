@@ -71,7 +71,7 @@ export class PlaceholderTemplateResponseEffect {
     private actions$: Actions,
     private rulesEngineService: RulesEngineService,
     private dynamicContentService: DynamicContentService,
-    private store: Store<PlaceholderRequestStore>
+    private store: Store<PlaceholderRequestStore>,
     @Optional() private translationService?: LocalizationService) {
   }
 

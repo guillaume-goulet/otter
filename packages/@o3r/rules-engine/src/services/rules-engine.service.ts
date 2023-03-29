@@ -13,7 +13,7 @@ import {
 import {computeConfigurationName, setConfigOverride} from '@o3r/configuration';
 import type { ConfigOverrideStore, PropertyOverride } from '@o3r/configuration';
 import {AssetPathOverrideStore, DynamicContentService, setAssetPathOverride} from '@o3r/dynamic-content';
-mport type { LocalizationOverrideStore } from '@o3r/localization';
+import type { LocalizationOverrideStore } from '@o3r/localization';
 import {setLocalizationOverride} from '@o3r/localization';
 import {BehaviorSubject, combineLatest, firstValueFrom, Observable, Subject, Subscription} from 'rxjs';
 import {distinctUntilChanged, filter, map, shareReplay, switchMap, withLatestFrom} from 'rxjs/operators';
@@ -21,7 +21,7 @@ import type {ActionBlock, Fact, Operator, Ruleset, UnaryOperator} from '../engin
 import {EngineDebugger, operatorList, RulesEngine} from '../engine/index';
 import type {ActionOverrideBlock} from '../interfaces/index';
 import type {RulesetsStore} from '../stores';
-import {RulesetsStore, selectActiveRuleSets, selectAllRulesets, selectRuleSetLinkComponents} from '../stores';
+import {selectActiveRuleSets, selectAllRulesets, selectRuleSetLinkComponents} from '../stores';
 import {RULES_ENGINE_OPTIONS, RulesEngineServiceOptions} from './rules-engine.token';
 import {LoggerService} from '@o3r/logger';
 

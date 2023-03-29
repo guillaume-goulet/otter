@@ -1,7 +1,6 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
-import { PlaceholderTemplateStoreModule } from '@o3r/components';
 import { LoggerModule } from '@o3r/logger';
 import { TranslateModule } from '@ngx-translate/core';
 import { DynamicContentModule } from '@o3r/dynamic-content';
@@ -13,7 +12,6 @@ import { DEFAULT_RULES_ENGINE_OPTIONS, RULES_ENGINE_OPTIONS, RulesEngineServiceO
 @NgModule({
   imports: [
     StoreModule,
-    PlaceholderRequestStoreModule,
     DynamicContentModule,
     RulesetsStoreModule,
     LoggerModule,
