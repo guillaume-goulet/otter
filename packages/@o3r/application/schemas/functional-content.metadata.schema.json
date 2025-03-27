@@ -315,7 +315,41 @@
             }
           }
         }
-      }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "LEFT_PANEL_LIST"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "parameters": {
+                "properties": {
+                  "sortingPropertyReference": {
+                    "type": "string",
+                    "description": "Name of the property to sort by. If defined, the widget will sort the data by this property"
+                  },
+                  "sortingDirection": {
+                    "type": "string",
+                    "enum": [
+                      "ASC",
+                      "DESC"
+                    ],
+                    "description": "Sorting direction ('ASC' for ascending, 'DESC' for descending) used if sortingPropertyReference is defined"
+                  }
+                },
+                "dependencies": {
+                  "sortingDirection": ["sortingPropertyReference"]
+                }
+              }
+            }
+          }
+        }
+      ]
     }
   }
 }
